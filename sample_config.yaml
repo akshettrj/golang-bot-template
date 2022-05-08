@@ -1,0 +1,7 @@
+telegram:
+
+  bot_token:
+  api_url:
+  owner_id:
+  sudo_users:
+  authorized_chats:
