@@ -8,3 +8,4 @@ A template for creating telegram bots in GoLang
 2. Open `main.go` and edit the package path in import section
 2. Open `state/state.go` and edit the package path in import section
 2. Open `middlewares/middlewares.go` and edit the package path in import section
+2. Open `database/connect.go` and edit the package path in import section

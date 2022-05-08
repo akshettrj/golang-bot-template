@@ -5,6 +5,7 @@ import (
     "time"
 
     "golang-bot-template/state"
+    "golang-bot-template/database"
 
     tele "gopkg.in/telebot.v3"
 )
@@ -12,6 +13,12 @@ import (
 func main() {
     config := state.State.Config
     config.LoadConfig()
+
+    db, err := database.Connect()
+    if err != nil {
+        log.Fatalln("could not connect to the database : ", err)
+    }
+    state.State.Database = db
 
     bot, err := tele.NewBot(tele.Settings{
         URL: config.Telegram.ApiURL,

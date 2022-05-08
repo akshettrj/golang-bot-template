@@ -21,6 +21,8 @@ type Config struct {
 
     } `yaml:"telegram"`
 
+    Database map[string]string `yaml:"database"`
+
 }
 
 func (cfg *Config) LoadConfig(paths ...string) {
