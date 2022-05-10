@@ -28,6 +28,7 @@ func main() {
     if err != nil {
         log.Fatalln("could not initialize bot : ", err)
     }
+    log.Printf("Telegram bot logged in as @%s\n", bot.Me.Username)
     state.State.Bot = bot
     state.State.StartTime = time.Now()
 
