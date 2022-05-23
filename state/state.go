@@ -1,24 +1,24 @@
 package state
 
 import (
-    "time"
+	"time"
 
-    "golang-bot-template/config"
+	"golang-bot-template/config"
 
-    "gorm.io/gorm"
-    tele "gopkg.in/telebot.v3"
+	tele "gopkg.in/telebot.v3"
+	"gorm.io/gorm"
 )
 
 type state struct {
-    Bot      *tele.Bot
-    Config   *config.Config
-    Database *gorm.DB
+	Bot      *tele.Bot
+	Config   *config.Config
+	Database *gorm.DB
 
-    StartTime time.Time
+	StartTime time.Time
 }
 
 var State state
 
 func init() {
-    State.Config = &config.Config{}
+	State.Config = &config.Config{}
 }
