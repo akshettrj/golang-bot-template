@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"path"
 	"time"
 
 	"golang-bot-template/database"
@@ -21,8 +22,8 @@ func main() {
 	var logger *zap.Logger
 	if config.Runtime.ProductionMode {
 		cfg := zap.NewProductionConfig()
-		cfg.OutputPaths = []string{"stderr", "./golang-bot-template.log"}
-		cfg.ErrorOutputPaths = []string{"stderr", "./golang-bot-template-error.log"}
+		cfg.OutputPaths = []string{"stderr", path.Join("logs", "golang-bot-template.log")}
+		cfg.ErrorOutputPaths = []string{"stderr", path.Join("logs", "golang-bot-template-error.log")}
 		logger, _ = cfg.Build()
 	} else {
 		logger, _ = zap.NewDevelopment()
