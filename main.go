@@ -21,9 +21,10 @@ func main() {
 	state.State.Database = db
 
 	bot, err := tele.NewBot(tele.Settings{
-		URL:    config.Telegram.ApiURL,
-		Token:  config.Telegram.BotToken,
-		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
+		URL:       config.Telegram.ApiURL,
+		Token:     config.Telegram.BotToken,
+		Poller:    &tele.LongPoller{Timeout: 10 * time.Second},
+		ParseMode: tele.ModeHTML,
 	})
 	if err != nil {
 		log.Fatalln("could not initialize bot : ", err)
